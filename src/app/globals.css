@@ -1,26 +1,191 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * ByteSpace design tokens, taken from the Figma variables
+ * (file WRZd0Dxn2nlocftXBA6NEM, frame "Home").
+ * Components use these tokens only, never raw hex values.
+ */
+@theme {
+  /* Palette: Figma color variables */
+  --color-persian-blue-800: #003be2;
+  --color-electric-lime-400: #d4fb20;
+  --color-electric-lime-500: #cbfc01;
+  --color-electric-violet-600: #7f30f7;
+  --color-electric-violet-950: #300b6a;
+  --color-shuttle-gray-50: #f5f5f6;
+  --color-shuttle-gray-100: #e5e6e8;
+  --color-shuttle-gray-200: #ced0d3;
+  --color-shuttle-gray-300: #abaeb5;
+  --color-shuttle-gray-400: #82868e;
+  --color-shuttle-gray-700: #4b4c53;
+  --color-shuttle-gray-900: #3a3b3f;
+  --color-shuttle-gray-950: #242528;
+  --color-ink-200: #d1d1d1; /* Black/200 */
+  --color-ink-400: #888888; /* Black/400 */
+  --color-ink-700: #4f4f4f; /* Black/700 */
+  --color-ink-950: #000000; /* Black/950 */
+  /* Section fill used by "Frame 15" and "Testimonials_Frame" (not a Figma variable) */
+  --color-surface: #fafafa;
+
+  /* Type scale: Figma text styles. Letter spacing -1% = -0.01em */
+  --text-heading-l: 4.5rem;
+  --text-heading-l--line-height: 1.2;
+  --text-heading-l--letter-spacing: -0.01em;
+  --text-heading-m: 2.75rem;
+  --text-heading-m--line-height: 1.2;
+  --text-heading-m--letter-spacing: -0.01em;
+  --text-heading-s: 1.5rem;
+  --text-heading-s--line-height: 2rem;
+  --text-heading-s--letter-spacing: -0.01em;
+  --text-heading-xs: 1.25rem;
+  --text-heading-xs--line-height: 1.2;
+  --text-heading-xs--letter-spacing: -0.01em;
+  --text-title: 2.25rem; /* "Heading S" on inner pages: Poppins 36/1.2 */
+  --text-title--line-height: 1.2;
+  --text-title--letter-spacing: -0.01em;
+  --text-display-404: 30rem;
+  --text-display-404--line-height: 1;
+  --text-display-404--letter-spacing: -0.01em;
+  --text-display-stat: 3rem; /* 55% figure in the progress cards */
+  --text-display-stat--line-height: 1.2;
+  --text-display-stat--letter-spacing: -0.01em;
+  --text-display-xs: 2.25rem;
+  --text-display-xs--line-height: 2.75rem;
+  --text-display-xs--letter-spacing: -0.01em;
+  --text-body-l: 1.125rem;
+  --text-body-l--line-height: 1.6;
+  --text-body-m: 1rem;
+  --text-body-m--line-height: 1.5rem;
+  --text-body-s: 0.875rem;
+  --text-body-s--line-height: 1.6;
+  --text-body-xs: 0.75rem;
+  --text-body-xs--line-height: 1.6;
+  --text-caption: 0.625rem; /* 10px captions in the dashboard cards */
+  --text-caption--line-height: 1.2;
+  --text-label-xl: 1.25rem;
+  --text-label-xl--line-height: 1.2;
+  --text-label-l: 1.125rem;
+  --text-label-l--line-height: 1.2;
+  --text-label-m: 1rem;
+  --text-label-m--line-height: 1.2;
+  --text-label-s: 0.875rem;
+  --text-label-s--line-height: 1.2;
+  --text-label-xs: 0.75rem;
+  --text-label-xs--line-height: 1.2;
+  --text-logo: 1.5rem;
+  --text-logo--line-height: normal;
+
+  /* Radii used across the design */
+  --radius-pill: 1.5rem; /* 24px: buttons, chips, cards */
+  --radius-panel: 1rem; /* 16px: floating stat cards */
+  --radius-media: 0.75rem; /* 12px: course thumbnails */
+
+  /* Layout */
+  --container-page: 75rem; /* 1200px content column */
+  --container-frame: 90rem; /* 1440px design frame */
 }
 
 @theme inline {
+  --font-sans: var(--font-satoshi);
+  --font-heading: var(--font-poppins);
+  --font-logo: var(--font-clash-display);
+  --font-mono: ui-monospace, monospace;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* shadcn semantic variables mapped to the ByteSpace palette */
+:root {
+  --background: #ffffff;
+  --foreground: var(--color-shuttle-gray-950);
+  --card: #ffffff;
+  --card-foreground: var(--color-shuttle-gray-950);
+  --popover: #ffffff;
+  --popover-foreground: var(--color-shuttle-gray-950);
+  --primary: var(--color-persian-blue-800);
+  --primary-foreground: var(--color-shuttle-gray-50);
+  --secondary: var(--color-electric-lime-400);
+  --secondary-foreground: var(--color-shuttle-gray-950);
+  --muted: var(--color-shuttle-gray-50);
+  --muted-foreground: var(--color-shuttle-gray-700);
+  --accent: var(--color-electric-lime-400);
+  --accent-foreground: var(--color-shuttle-gray-950);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: var(--color-shuttle-gray-200);
+  --input: var(--color-shuttle-gray-200);
+  --ring: var(--color-persian-blue-800);
+  --radius: 1rem;
+}
+
+/* Figma effect style "A": a layered soft drop shadow. Uses filter so it follows image transparency.
+   translateZ(0) gives the element its own GPU layer, so the filter is not repainted while scrolling. */
+@utility drop-shadow-float {
+  transform: translateZ(0);
+  filter: drop-shadow(0.518px 0.741px 3.036px rgb(0 0 0 / 0.04))
+    drop-shadow(2.233px 3.19px 5.723px rgb(0 0 0 / 0.06))
+    drop-shadow(5.383px 7.69px 9.571px rgb(0 0 0 / 0.07))
+    drop-shadow(10.208px 14.582px 16.087px rgb(0 0 0 / 0.08))
+    drop-shadow(16.946px 24.209px 24px rgb(0 0 0 / 0.09))
+    drop-shadow(25.838px 36.912px 36px rgb(0 0 0 / 0.1))
+    drop-shadow(37.122px 53.032px 56px rgb(0 0 0 / 0.11))
+    drop-shadow(51.038px 72.912px 72px rgb(0 0 0 / 0.13));
+}
+
+/* Keyboard focus outlines. Use focus-ring on light surfaces, focus-ring-light on blue ones. */
+@utility focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+@utility focus-ring-light {
+  &:focus-visible {
+    outline: 2px solid var(--color-electric-lime-400);
+    outline-offset: 4px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply scroll-pt-24 font-sans;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
 }
