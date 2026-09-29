@@ -9,17 +9,14 @@ import { routes } from "@/content/routes";
 import { cn } from "@/lib/utils";
 
 type CategoryPillsProps = {
-  /** Rows of labels; kept as separate rows so desktop line breaks match Figma */
   rows: readonly (readonly string[])[];
-  /** Show the trailing "+ More" link on the last row */
   showMore?: boolean;
   rowClassName?: string;
 };
 
-/**
- * Single-select category filter (home "Discover" section and search page).
- * Pills from `md` up; a searchable combobox with a clear button on mobile.
- */
+
+
+
 export function CategoryPills({
   rows,
   showMore = false,

@@ -6,21 +6,13 @@ export type OrnamentShape = "spring" | "coil" | "torus" | "cylinder" | "pyramid"
 
 type OrnamentProps = {
   shape: OrnamentShape;
-  /** Figma tints the grey 3D renders with a hard-light color layer clipped to the shape */
   tint: "lime" | "white";
-  /** Rendered size in px (the renders are square) */
   size: number;
   flip?: boolean;
-  /** Load immediately (use for shapes visible on first paint) */
   eager?: boolean;
   className?: string;
 };
 
-/**
- * Decorative 3D shape. Rebuilds the Figma "Mask Group" effect:
- * the grey render plus a lime or white layer, masked to the render's silhouette
- * and blended with mix-blend-mode: hard-light.
- */
 export function Ornament({ shape, tint, size, flip = false, eager = false, className }: OrnamentProps) {
   const mask = `url(/images/ornament-${shape}-mask.png)`;
 

@@ -15,7 +15,6 @@ import { SectionHeading } from "@/components/shared/Typography";
 import { courses, creatorBenefits, growthStats } from "@/content/home";
 import { blurProps } from "@/lib/blur-data";
 
-/** "Frame 15": two alternating text + collage rows on a soft gradient background. */
 export function Growth() {
   return (
     <section
@@ -65,11 +64,6 @@ export function Growth() {
   );
 }
 
-/*
- * The collages are layered artwork. Pieces are placed with percentages of the
- * collage box (621x552 and 541x596 in Figma) so proportions hold when it scales.
- * Overlay cards are hidden on phones to keep the photo readable.
- */
 
 function LearnerCollage() {
   const photo = "/images/hero-student.png";

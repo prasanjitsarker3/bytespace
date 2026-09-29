@@ -5,7 +5,6 @@ import { Container } from "@/components/shared/Container";
 import { SectionIntro } from "@/components/shared/Typography";
 import { routes } from "@/content/routes";
 
-// Closest lucide equivalents of the Material icons used in Figma
 const categories: { label: string; icon: LucideIcon }[] = [
   { label: "Design", icon: PencilRuler },
   { label: "Development", icon: CodeXml },

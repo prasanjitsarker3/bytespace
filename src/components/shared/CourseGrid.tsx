@@ -2,14 +2,12 @@ import { CourseCard } from "@/components/shared/CourseCard";
 import type { Course } from "@/content/types";
 import { cn } from "@/lib/utils";
 
-/** Responsive 1 / 2 / 3 column grid of course cards with the design's 40px gaps. */
 export function CourseGrid({
   courses,
   label,
   className,
 }: {
   courses: (Course & { key?: string })[];
-  /** Accessible name for the list */
   label?: string;
   className?: string;
 }) {
