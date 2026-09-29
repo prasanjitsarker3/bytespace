@@ -13,10 +13,13 @@ export function PageBanner({
   children: React.ReactNode;
 }) {
   return (
-    <div className={cn("relative isolate overflow-hidden bg-primary", className)}>
-      <GridBackdrop preload />
+    <>
+      {/* Kept outside the isolated banner so its z-index competes with the whole page. */}
       <Navbar active={active} />
-      {children}
-    </div>
+      <div className={cn("relative isolate overflow-hidden bg-primary", className)}>
+        <GridBackdrop preload />
+        {children}
+      </div>
+    </>
   );
 }

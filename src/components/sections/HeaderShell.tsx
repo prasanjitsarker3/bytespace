@@ -19,7 +19,7 @@ export function HeaderShell({ children }: { children: React.ReactNode }) {
   return (
     <header
       data-scrolled={scrolled}
-      className="group/header fixed inset-x-0 top-0 z-40 transition-[background-color,box-shadow] duration-300 ease-out data-[scrolled=true]:bg-primary data-[scrolled=true]:shadow-[0_8px_24px_rgb(0_0_0/0.18)]"
+      className="group/header fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow] duration-300 ease-out data-[scrolled=true]:bg-primary data-[scrolled=true]:shadow-[0_8px_24px_rgb(0_0_0/0.18)]"
     >
       {children}
     </header>
