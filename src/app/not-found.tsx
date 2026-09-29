@@ -20,7 +20,7 @@ export default function NotFound() {
             404
           </p>
           <div className="relative flex flex-col items-center gap-8">
-            <h1 className="max-w-233.75 font-heading text-heading-m font-semibold text-white md:text-heading-l">
+            <h1 className="max-w-233.75 font-heading text-mobile-h1 font-semibold text-white md:text-heading-l">
               The page you are looking for doesn’t exist
             </h1>
             <p className="text-body-l text-shuttle-gray-100">

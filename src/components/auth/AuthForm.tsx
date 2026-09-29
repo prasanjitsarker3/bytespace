@@ -12,12 +12,12 @@ export function AuthForm({ mode }: { mode: AuthMode }) {
   return (
     <section
       aria-labelledby="auth-title"
-      className="flex min-h-[49rem] flex-col justify-between gap-10 rounded-pill bg-white px-6 pt-10 pb-8 sm:px-15.75 sm:pt-15.25 sm:pb-10"
+      className="flex w-full max-w-144.75 flex-col justify-between gap-10 rounded-pill bg-white px-6 pt-10 pb-8 sm:px-15.75 sm:pt-15.25 sm:pb-10 xl:min-h-[49rem]"
     >
       <form action="#" className="flex flex-col gap-10">
         <div>
           <p className="text-body-l text-primary">{copy.eyebrow}</p>
-          <h1 id="auth-title" className="font-heading text-heading-m font-semibold text-shuttle-gray-950">
+          <h1 id="auth-title" className="font-heading text-mobile-h2 font-semibold text-shuttle-gray-950 sm:text-heading-m">
             {copy.title}
           </h1>
         </div>

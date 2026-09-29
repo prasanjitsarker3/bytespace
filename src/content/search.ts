@@ -22,3 +22,10 @@ export const searchResults = [0, 1, 2].flatMap((round) =>
 export const searchScopes = { courses: "Courses", creators: "Creators" };
 
 export const sortOptions = { relevant: "Most relevant", newest: "Newest", rating: "Highest rated" };
+
+export const levelOptions = {
+  all: "All levels",
+  beginner: "Beginner",
+  intermediate: "Intermediate",
+  advanced: "Advanced",
+};

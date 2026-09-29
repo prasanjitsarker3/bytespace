@@ -11,7 +11,7 @@ export const cn = createCn({
         {
           text: [
             "heading-l", "heading-m", "heading-s", "heading-xs",
-            "title", "display-404", "display-stat", "display-xs",
+            "mobile-h1", "mobile-h2", "mobile-title", "title", "display-404", "display-stat", "display-xs",
             "body-l", "body-m", "body-s", "body-xs", "caption",
             "label-xl", "label-l", "label-m", "label-s", "label-xs",
             "logo",

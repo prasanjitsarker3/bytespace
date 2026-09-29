@@ -22,14 +22,14 @@ export function Categories() {
         <SectionIntro
           id="categories-title"
           title="Explore Diverse Learning Paths at Bytespace"
-          headingClassName="text-display-xs"
+          headingClassName="md:text-display-xs"
         >
           At Bytespace, we believe in empowering individuals through knowledge. Our diverse range of courses spans
           various fields, ensuring there&apos;s something for everyone. Unleash your potential and explore our
           carefully curated categories.
         </SectionIntro>
 
-        <ul className="mt-17 grid w-full grid-cols-2 gap-6 sm:grid-cols-3 lg:flex lg:justify-center lg:gap-10">
+        <ul className="mt-17 grid w-full grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-6 xl:flex xl:justify-center xl:gap-10">
           {categories.map(({ label, icon: Icon }) => (
             <li key={label}>
               <CategoryCard label={label} icon={Icon} />
@@ -45,7 +45,7 @@ function CategoryCard({ label, icon: Icon }: { label: string; icon: LucideIcon }
   return (
     <Link
       href={routes.courses}
-      className="group flex aspect-square w-full flex-col items-center justify-center gap-3 rounded-pill border border-shuttle-gray-200 text-shuttle-gray-950 transition-colors focus-ring hover:border-primary hover:bg-shuttle-gray-50 lg:size-41.75"
+      className="group flex aspect-square w-full flex-col items-center justify-center gap-3 rounded-pill border border-shuttle-gray-200 text-shuttle-gray-950 transition-colors focus-ring hover:border-primary hover:bg-shuttle-gray-50 xl:size-41.75"
     >
       <span className="flex items-center justify-center rounded-full bg-electric-lime-400 p-3 transition-transform group-hover:scale-105">
         <Icon aria-hidden className="size-9" strokeWidth={1.75} />

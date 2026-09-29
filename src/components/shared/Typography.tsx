@@ -10,7 +10,7 @@ export function SectionHeading({
   children,
 }: TextProps & { as?: "h1" | "h2"; id?: string }) {
   return (
-    <Tag id={id} className={cn("font-heading text-heading-m font-semibold text-shuttle-gray-950", className)}>
+    <Tag id={id} className={cn("font-heading text-mobile-h2 font-semibold text-shuttle-gray-950 md:text-heading-m", className)}>
       {children}
     </Tag>
   );

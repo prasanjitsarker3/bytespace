@@ -13,7 +13,7 @@ export function FeaturedCourses() {
           different fields, from technology to the arts, and make a difference in your career and life.
         </SectionIntro>
 
-        <div className="mt-10.5">
+        <div className="mt-8 w-full md:mt-10.5 md:w-auto">
           <CategoryPills rows={categoryRows} showMore />
         </div>
 

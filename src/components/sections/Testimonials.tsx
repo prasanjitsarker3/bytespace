@@ -20,11 +20,11 @@ export function Testimonials() {
       </FrameLayer>
 
       <Container className="flex flex-col gap-12 lg:gap-18">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:gap-10.75">
-          <SectionHeading id="testimonials-title" className="text-ink-950 lg:w-144.25 lg:shrink-0">
+        <div className="flex flex-col gap-6 xl:flex-row xl:items-end xl:gap-10.75">
+          <SectionHeading id="testimonials-title" className="text-ink-950 xl:w-144.25 xl:shrink-0">
             Discover What Our Community Is Saying
           </SectionHeading>
-          <p className="text-body-l text-ink-700 lg:w-145">
+          <p className="text-body-l text-ink-700 xl:w-145">
             At ByteSpace, our vibrant community of learners and creators is at the heart of what we do. Hear directly
             from those who have experienced the transformative journey of learning and creating on our platform.
             Explore testimonials that reflect the diverse perspectives of enthusiastic learners and accomplished

@@ -30,7 +30,7 @@ export function Hero() {
         <div className="flex flex-col items-center gap-8 text-center">
           <h1
             id="hero-title"
-            className="max-w-233.75 font-heading text-heading-m font-semibold text-white md:text-heading-l"
+            className="max-w-233.75 font-heading text-mobile-h1 font-semibold text-white md:text-heading-l"
           >
             Get Access to Hundreds Courses Available
           </h1>

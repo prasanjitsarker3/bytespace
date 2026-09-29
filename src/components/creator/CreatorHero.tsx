@@ -27,7 +27,7 @@ export function CreatorHero() {
           />
           <div className="flex flex-col gap-2">
             <div className="flex flex-wrap items-center gap-2">
-              <h1 id="creator-name" className="font-heading text-title font-semibold text-shuttle-gray-50">
+              <h1 id="creator-name" className="font-heading text-mobile-title font-semibold text-shuttle-gray-50 sm:text-title">
                 {creator.name}
               </h1>
               <Badge className="h-auto rounded-pill bg-electric-lime-400 px-6 py-2 text-label-m font-medium text-shuttle-gray-950">

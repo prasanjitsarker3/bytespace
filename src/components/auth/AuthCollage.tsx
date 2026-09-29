@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
  */
 export function AuthCollage({ mode }: { mode: AuthMode }) {
   return (
-    <div aria-hidden className="relative mt-2 hidden h-[40.5rem] w-[43.625rem] max-w-full lg:block">
+    <div aria-hidden className="relative mt-2 hidden h-[40.5rem] w-[43.625rem] max-w-full xl:block">
       <CourseCard course={courses[1]} moreTone="dark" className="pointer-events-none absolute top-[10.5rem] left-0" />
       <CourseCard
         course={courses[2]}

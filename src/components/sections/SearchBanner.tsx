@@ -15,7 +15,7 @@ export function SearchBanner() {
       aria-labelledby="search-title"
       className="flex flex-col items-center gap-8 pt-32 pb-16 lg:pt-41 lg:pb-17.25"
     >
-      <h1 id="search-title" className="text-center font-heading text-title font-semibold text-shuttle-gray-50">
+      <h1 id="search-title" className="text-center font-heading text-mobile-title font-semibold text-shuttle-gray-50 sm:text-title">
         Find Your Next Course
       </h1>
       <form role="search" action={routes.courses} className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row">

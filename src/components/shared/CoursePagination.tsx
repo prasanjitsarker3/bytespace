@@ -4,13 +4,13 @@ import { Pagination, PaginationContent, PaginationItem, PaginationLink } from "@
 import { cn } from "@/lib/utils";
 
 const arrow =
-  "h-12 w-14 rounded-pill border border-shuttle-gray-200 bg-white text-shuttle-gray-950 hover:bg-shuttle-gray-50 [&_svg:not([class*='size-'])]:size-6";
+  "h-12 w-12 rounded-pill sm:w-14 border border-shuttle-gray-200 bg-white text-shuttle-gray-950 hover:bg-shuttle-gray-50 [&_svg:not([class*='size-'])]:size-6";
 
 /** Pagination from the Search Page: outlined arrow pills and Poppins page numbers. */
 export function CoursePagination({ current = 1, total = 5 }: { current?: number; total?: number }) {
   return (
     <Pagination>
-      <PaginationContent className="gap-6">
+      <PaginationContent className="gap-3 sm:gap-6">
         <PaginationItem>
           <PaginationLink href="#" aria-label="Go to previous page" className={arrow}>
             <ChevronLeft aria-hidden />

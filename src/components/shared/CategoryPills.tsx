@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
+import { CategoryCombobox } from "@/components/shared/CategoryCombobox";
 import { pillVariants } from "@/components/shared/pill";
 import { routes } from "@/content/routes";
 import { cn } from "@/lib/utils";
@@ -15,38 +16,73 @@ type CategoryPillsProps = {
   rowClassName?: string;
 };
 
-/** Single-select category filter pills (home "Discover" section and search page). */
-export function CategoryPills({ rows, showMore = false, rowClassName }: CategoryPillsProps) {
-  const [active, setActive] = useState(rows[0]?.[0]);
+/**
+ * Single-select category filter (home "Discover" section and search page).
+ * Pills from `md` up; a searchable combobox with a clear button on mobile.
+ */
+export function CategoryPills({
+  rows,
+  showMore = false,
+  rowClassName,
+}: CategoryPillsProps) {
+  const [active, setActive] = useState<string | undefined>(rows[0]?.[0]);
 
   return (
-    <div role="group" aria-label="Filter courses by category" className="flex flex-col items-center gap-5.25">
-      {rows.map((row, rowIndex) => (
-        <ul key={row.join("|")} className={cn("flex flex-wrap items-center justify-center gap-4", rowClassName)}>
-          {row.map((label) => (
-            <li key={label}>
-              <button
-                type="button"
-                aria-pressed={label === active}
-                onClick={() => setActive(label)}
-                className={pillVariants({ active: label === active })}
-              >
-                {label}
-              </button>
-            </li>
-          ))}
-          {showMore && rowIndex === rows.length - 1 && (
-            <li>
-              <Link
-                href={routes.courses}
-                className="rounded-sm px-1 text-label-m font-medium text-shuttle-gray-700 focus-ring hover:text-primary"
-              >
-                + More
-              </Link>
-            </li>
-          )}
-        </ul>
-      ))}
-    </div>
+    <>
+      <div className="flex w-full flex-col gap-3 md:hidden">
+        <CategoryCombobox
+          categories={rows.flat()}
+          value={active}
+          onChange={setActive}
+        />
+        {showMore && (
+          <Link
+            href={routes.courses}
+            className="self-end rounded-sm px-1 text-label-m font-medium text-shuttle-gray-700 focus-ring hover:text-primary"
+          >
+            + More
+          </Link>
+        )}
+      </div>
+
+      <div
+        role="group"
+        aria-label="Filter courses by category"
+        className="hidden flex-col items-center gap-5.25 md:flex"
+      >
+        {rows.map((row, rowIndex) => (
+          <ul
+            key={row.join("|")}
+            className={cn(
+              "flex flex-wrap items-center justify-center gap-4",
+              rowClassName,
+            )}
+          >
+            {row.map((label) => (
+              <li key={label}>
+                <button
+                  type="button"
+                  aria-pressed={label === active}
+                  onClick={() => setActive(label)}
+                  className={pillVariants({ active: label === active })}
+                >
+                  {label}
+                </button>
+              </li>
+            ))}
+            {showMore && rowIndex === rows.length - 1 && (
+              <li>
+                <Link
+                  href={routes.courses}
+                  className="rounded-sm px-1 text-label-m font-medium text-shuttle-gray-700 focus-ring hover:text-primary"
+                >
+                  + More
+                </Link>
+              </li>
+            )}
+          </ul>
+        ))}
+      </div>
+    </>
   );
 }

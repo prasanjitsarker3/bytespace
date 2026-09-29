@@ -38,7 +38,7 @@ export function CourseCard({
           sizes="(min-width: 1024px) 341px, 90vw"
           className="object-cover"
         />
-        <ul className="absolute inset-x-3 bottom-4.5 flex flex-wrap gap-3">
+        <ul className="absolute inset-x-3 bottom-4.5 flex flex-wrap gap-2 sm:gap-3">
           <li className={thumbChip}>{course.lessons}</li>
           <li className={thumbChip}>{course.duration}</li>
           <li className={thumbChip}>{course.comments}</li>
@@ -49,7 +49,7 @@ export function CourseCard({
         <div className="flex min-w-0 flex-1 flex-col gap-4">
           <div className="min-w-0">
             <h3 className="truncate font-heading text-heading-xs font-semibold text-ink-950">
-              <Link href={course.href ?? routes.course} className="rounded-sm focus-ring after:absolute after:inset-0">
+              <Link href={course.href ?? routes.course} className="block truncate rounded-sm focus-ring after:absolute after:inset-0">
                 {course.title}
               </Link>
             </h3>

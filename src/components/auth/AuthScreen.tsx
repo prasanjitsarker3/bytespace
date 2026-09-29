@@ -18,8 +18,8 @@ export function AuthScreen({ mode }: { mode: AuthMode }) {
           <Logo markOnly />
         </header>
 
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_36.1875rem] lg:gap-10">
-          <aside className="flex flex-col gap-4 text-shuttle-gray-50">
+        <div className="grid justify-items-center gap-10 xl:grid-cols-[minmax(0,1fr)_36.1875rem] xl:justify-items-stretch xl:gap-10">
+          <aside className="flex w-full max-w-144.75 flex-col gap-4 text-shuttle-gray-50 xl:max-w-none">
             <p className="font-heading text-heading-xs font-semibold">{copy.asideTitle}</p>
             <p className="max-w-118.75 text-body-l">{copy.asideBody}</p>
             <AuthCollage mode={mode} />

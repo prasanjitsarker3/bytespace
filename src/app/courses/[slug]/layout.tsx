@@ -38,13 +38,13 @@ export default function CourseLayout({ children }: LayoutProps<"/courses/[slug]"
 
           <CourseHeader className="col-span-full row-start-1 pt-32 lg:pt-43" />
 
-          <div className="row-start-2 pt-10 pb-12 lg:col-start-1 lg:pt-14.75 lg:pb-15.5">
+          <div className="col-start-1 row-start-2 pt-10 pb-12 lg:pt-14.75 lg:pb-15.5">
             <CoursePreview />
           </div>
 
-          <CourseSidebar className="row-start-3 mt-10 lg:col-start-2 lg:row-span-2 lg:row-start-2 lg:mt-14.75 lg:self-start" />
+          <CourseSidebar className="col-start-1 row-start-3 mt-10 lg:col-start-2 lg:row-span-2 lg:row-start-2 lg:mt-14.75 lg:self-start" />
 
-          <main className="row-start-4 flex flex-col gap-10 pt-10 pb-16 lg:col-start-1 lg:row-start-3 lg:pt-15.5 lg:pb-20">
+          <main className="col-start-1 row-start-4 flex flex-col gap-10 pt-10 pb-16 lg:row-start-3 lg:pt-15.5 lg:pb-20">
             <CourseTabNav />
             <div className="max-w-181.25">{children}</div>
           </main>

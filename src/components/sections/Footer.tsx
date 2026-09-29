@@ -14,7 +14,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-white pt-16 pb-10 lg:pt-17.75 lg:pb-12">
       <Container className="flex flex-col gap-16 lg:gap-32.5">
-        <div className="flex flex-col gap-12 lg:flex-row lg:justify-between lg:gap-23">
+        <div className="flex flex-col gap-12 xl:flex-row xl:justify-between xl:gap-23">
           <div className="flex max-w-132 flex-col gap-11.25">
             <div className="flex flex-col gap-4">
               <Logo tone="dark" className="self-start" />
@@ -46,7 +46,7 @@ export function Footer() {
             </form>
           </div>
 
-          <nav aria-label="Footer" className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:w-145 lg:pt-12">
+          <nav aria-label="Footer" className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:max-w-145 xl:w-145 xl:pt-12">
             {footerColumns.map((column) => (
               <div key={column.links[0]}>
                 {column.heading && <h2 className="sr-only">{column.heading}</h2>}

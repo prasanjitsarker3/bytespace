@@ -29,15 +29,15 @@ export function Growth() {
       </FrameLayer>
 
       <Container className="flex flex-col gap-20 lg:gap-18">
-        <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-15.75">
-          <div className="flex w-full flex-col gap-10 lg:w-143.5 lg:shrink-0">
+        <div className="flex flex-col items-center gap-12 xl:flex-row xl:gap-15.75">
+          <div className="flex w-full flex-col gap-10 xl:w-143.5 xl:shrink-0">
             <SectionHeading id="growth-title">Your Path to Professional Growth Starts Here!</SectionHeading>
             <p className="max-w-119.25 text-body-l text-shuttle-gray-700">
               Explore our curated selection of courses tailored to enhance your capabilities and accelerate your
               career journey. Whether you are looking to sharpen specific skills, gain industry expertise, or embark
               on a new career path entirely, we have the resources you need.
             </p>
-            <dl className="flex items-end gap-14">
+            <dl className="flex flex-wrap items-end gap-x-8 gap-y-4 sm:gap-x-14">
               {growthStats.map((stat) => (
                 <div key={stat.label} className="flex flex-col-reverse">
                   <dt className="text-body-l text-shuttle-gray-700">{stat.label}</dt>
@@ -49,9 +49,9 @@ export function Growth() {
           <LearnerCollage />
         </div>
 
-        <div className="flex flex-col-reverse items-center gap-12 lg:flex-row lg:gap-19.75">
+        <div className="flex flex-col-reverse items-center gap-12 xl:flex-row xl:gap-19.75">
           <CreatorCollage />
-          <div className="flex w-full flex-col gap-10 lg:w-145 lg:shrink-0">
+          <div className="flex w-full flex-col gap-10 xl:w-145 xl:shrink-0">
             <SectionHeading className="max-w-97.75">Create &amp; Manage Courses Easily.</SectionHeading>
             <p className="max-w-143.5 text-body-l text-shuttle-gray-700">
               <strong className="font-bold text-shuttle-gray-950">ByteSpace</strong> supports individuals or entities
@@ -74,7 +74,7 @@ export function Growth() {
 function LearnerCollage() {
   const photo = "/images/hero-student.png";
   return (
-    <div className="relative aspect-621/552 w-full max-w-155.25 lg:shrink-0">
+    <div className="relative aspect-621/552 w-full max-w-155.25 xl:shrink-0">
       <CourseCard course={courses[0]} className="absolute top-0 left-0 hidden w-[60%] max-w-none sm:flex" />
       <div className="absolute top-[2.2%] left-0 aspect-577/540 w-[93%]">
         <Image
@@ -95,7 +95,7 @@ function LearnerCollage() {
 function CreatorCollage() {
   const photo = "/images/creator-woman.png";
   return (
-    <div className="relative aspect-541/596 w-full max-w-135.25 lg:shrink-0">
+    <div className="relative aspect-541/596 w-full max-w-135.25 xl:shrink-0">
       <TotalRevenueCard className="absolute top-[7.4%] left-0 hidden sm:flex" />
       <YearToDateCard className="absolute top-[32.6%] left-0 hidden sm:flex" />
       <div className="absolute top-0 left-[5.1%] h-full w-[80.4%] drop-shadow-float">

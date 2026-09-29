@@ -23,7 +23,7 @@ export default function SearchPage() {
 
       <Container as="main" className="flex flex-1 flex-col pt-12 pb-16 lg:pt-18 lg:pb-18">
         <FilterBar />
-        <div className="mt-8">
+        <div className="mt-3 md:mt-8">
           <CategoryPills rows={[searchCategories]} rowClassName="xl:w-full xl:flex-nowrap xl:justify-between xl:gap-x-2" />
         </div>
         <CourseGrid courses={searchResults} label="Search results" className="mt-12 lg:mt-19.25" />

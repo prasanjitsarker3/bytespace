@@ -15,7 +15,7 @@ export function CourseHeader({ className }: { className?: string }) {
     <header className={cn("flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between", className)}>
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2 text-shuttle-gray-50">
-          <h1 className="font-heading text-title font-semibold">{course.title}</h1>
+          <h1 className="font-heading text-mobile-title font-semibold sm:text-title">{course.title}</h1>
           <p className="font-heading text-heading-xs font-semibold">{course.subtitle}</p>
         </div>
         <p className="text-label-l font-medium text-shuttle-gray-50">
